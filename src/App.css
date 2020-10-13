@@ -49,6 +49,11 @@ body {
   flex-grow: 1;
 }
 
+.app__graphTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
