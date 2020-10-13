@@ -29,9 +29,6 @@ const options = {
           format: "MM/DD/YY",
           tooltipFormat: "ll",
         },
-        ticks: {
-          padding: 20,
-        },
       },
     ],
     yAxes: [
@@ -40,7 +37,7 @@ const options = {
           display: false,
         },
         ticks: {
-          padding: 20,
+         
           callback: function (value, index, values) {
             return numeral(value).format("0a");
           },
@@ -50,7 +47,7 @@ const options = {
   },
 };
 
-const buildChartData = (data, casesType = "cases") => {
+const buildChartData = (data, casesType) => {
     let chartData = [];
     let lastDataPoint;
 
@@ -68,7 +65,7 @@ const buildChartData = (data, casesType = "cases") => {
     return chartData;
   };
 
-function LineGraph() {
+function LineGraph({ casesType = 'cases'}) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -78,13 +75,13 @@ function LineGraph() {
             return response.json();
         })
         .then((data) => {
-          let chartData = buildChartData(data, "cases");
+          let chartData = buildChartData(data, casesType);
           console.log(chartData);
           setData(chartData);
         });
     }
     fetchData();
-  }, []);
+  }, [casesType]);
 
   return (
     <div className="lineGraph">
@@ -94,7 +91,7 @@ function LineGraph() {
         data={{
           datasets: [
             {
-              backgroundColor: "rgba(204, 16, 52, 0.21)",
+              backgroundColor: "rgba(204, 16, 52, 0.5)",
               borderColor: "#CC1034",
               data: data,
             },

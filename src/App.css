@@ -24,7 +24,7 @@ body {
   flex: 0.9;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 990px) {
   .app {
     flex-direction: column;
   }
