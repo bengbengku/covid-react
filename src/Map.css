@@ -40,3 +40,46 @@
 .info-container {
     width: 150px;
 }
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .map {
+        height: 300px;
+    }
+
+    .map .leaflet-container {
+        height: 100%;
+    }
+
+    .info-flag img {
+        width: 50px;
+        border-radius: 5px;
+    }
+    
+    .info-name {
+        font-size: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+    
+    .info-flag {
+        height: 70px;
+        width: 100%;
+        background-size: cover;
+        border-radius: 8px;
+        background-position: center;
+    }
+    
+    .info-confirmed,
+    .info-recovered,
+    .info-deaths {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    
+    .info-container {
+        width: 150px;
+    }
+}

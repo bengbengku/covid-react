@@ -19,7 +19,7 @@
     color: #cc1034;
     font-weight: 600;
     font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
 }
 
 .infoBox__cases--green {
@@ -31,4 +31,65 @@
     font-weight: 700 !important;
     font-size: 0.8rem !important;
     margin-top: 15px !important;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .infoBox {
+        height: 100px;
+    }
+
+    .card__container > h2 {
+        font-size: medium;
+    }
+
+    .card__container .MuiCardContent-root {
+        font-size: medium;
+        margin-top: 0 !important;
+        font-size: 8px !important;
+        margin-right: 8px !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card__container .infoBox__total {
+        margin-top: 0 !important;
+        font-size: 8px !important;
+    }
+
+    .InfoBox--selected {
+        border-top: 5px solid greenyellow;
+    }
+
+    .infoBox--red {
+        border-color: #CC1034;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .infoBox {
+        height: 85px;
+    }
+
+    .card__container .MuiCardContent-root {
+        font-size: medium;
+        margin-top: 0 !important;
+        font-size: 8px !important;
+        margin-right: 8px !important;
+    }
+
+
+    .InfoBox--selected {
+        border-top: 5px solid greenyellow;
+    }
+
+    .infoBox--red {
+        border-color: #CC1034;
+    }
 }
