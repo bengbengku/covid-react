@@ -1,6 +1,8 @@
 export const sortData = (data) => {
     const sortedData = [...data];
 
+    //return sortedData.sort((a, b) => (a.cases > b.cases ? -1 : 1)) -> Alternatif sortit single line
+
     sortedData.sort((a, b) => {
         if (a.cases > b.cases) {
             return -1;
