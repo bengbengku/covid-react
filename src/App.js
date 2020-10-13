@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Table from "./Table";
 import InfoBox from "./InfoBox";
 import Map from "./Map";
 
@@ -14,6 +15,15 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("Worldwide");
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://disease.sh/v3/covid-19/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setCountryInfo(data);
+      });
+  }, []);
 
   useEffect(() => {
     const getCountriesData = async () => {
@@ -24,6 +34,7 @@ function App() {
             name: country.country,
             value: country.countryInfo.iso2,
           }));
+          setTableData(data);
           setCountries(countries);
         });
     };
@@ -48,8 +59,6 @@ function App() {
       });
   };
 
-  console.log("object >>>" , countryInfo);
-
   return (
     <div className="app">
       <div className="app__left">
@@ -70,9 +79,21 @@ function App() {
         </div>
 
         <div className="app__stats">
-          <InfoBox title="Coronavirus" cases={countryInfo.todayCases} total={countryInfo.cases} />
-          <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
-          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+          <InfoBox
+            title="Coronavirus"
+            cases={countryInfo.todayCases}
+            total={countryInfo.cases}
+          />
+          <InfoBox
+            title="Recovered"
+            cases={countryInfo.todayRecovered}
+            total={countryInfo.recovered}
+          />
+          <InfoBox
+            title="Deaths"
+            cases={countryInfo.todayDeaths}
+            total={countryInfo.deaths}
+          />
         </div>
 
         <Map />
@@ -81,6 +102,7 @@ function App() {
       <Card className="app__right">
         <CardContent>
           <h3>Live cases by country</h3>
+          <Table countries={tableData} />
           <h3>Live cases by country</h3>
         </CardContent>
       </Card>
