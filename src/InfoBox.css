@@ -22,6 +22,10 @@
     margin-bottom: 0.5rem;
 }
 
+.infoBox__cases--green {
+    color:#7dd71d !important;
+}
+
 .infoBox__total {
     color: #6c757d;
     font-weight: 700 !important;
