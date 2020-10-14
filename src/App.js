@@ -16,7 +16,7 @@ import "leaflet/dist/leaflet.css";
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState("Worldwide");
+  const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [mapCenter, setMapCenter] = useState({ lat: -5, lng: 120 });
@@ -56,7 +56,7 @@ function App() {
     setCountry(countryCode);
 
     const url =
-      countryCode === "Worldwide"
+      countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
@@ -81,7 +81,7 @@ function App() {
               onChange={onCountryChange}
               value={country}
             >
-              <MenuItem value="Worldwide">Worldwide</MenuItem>
+              <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries.map((country) => (
                 <MenuItem value={country.value}>{country.name}</MenuItem>
               ))}
