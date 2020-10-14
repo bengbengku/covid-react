@@ -42,11 +42,11 @@
         height: 100px;
     }
 
-    .card__container > h2 {
+    .infoBox__container > h2 {
         font-size: medium;
     }
 
-    .card__container .MuiCardContent-root {
+    .infoBox__container .MuiCardContent-root {
         font-size: medium;
         margin-top: 0 !important;
         font-size: 8px !important;
@@ -55,7 +55,7 @@
         flex-direction: column;
     }
 
-    .card__container .infoBox__total {
+    .infoBox__container .infoBox__total {
         margin-top: 0 !important;
         font-size: 8px !important;
     }
@@ -77,7 +77,7 @@
         height: 85px;
     }
 
-    .card__container .MuiCardContent-root {
+    .infoBox__container .MuiCardContent-root {
         font-size: medium;
         margin-top: 0 !important;
         font-size: 8px !important;
