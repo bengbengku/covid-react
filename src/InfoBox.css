@@ -93,3 +93,35 @@
         border-color: #CC1034;
     }
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .infoBox {
+        height: 85px;
+    }
+
+    .infoBox__container > h2 {
+        font-size: 12px !important;
+    }
+    
+    .infoBox__container > .infoBox__total {
+        margin-top: 0 !important;
+        font-size: 8px !important;
+    }
+
+    .infoBox__container > p {
+        font-size: 10px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .InfoBox--selected {
+        border-top: 5px solid greenyellow;
+    }
+
+    .infoBox--red {
+        border-color: #CC1034;
+    }
+}
