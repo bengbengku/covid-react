@@ -24,7 +24,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
+  flex-wrap: wrap;
 }
+
 
 .app__dropdown {
   background-color: white;
@@ -37,6 +39,15 @@ body {
 .app__right {
   display: flex;
   flex-direction: column;
+}
+
+
+.app__footer {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  width: 0;
+  margin-top: 20px;
 }
 
 .app__right .MuiCardContent-root {
@@ -67,6 +78,13 @@ body {
     .app__right {
       margin-top: 20px;
     }
+
+    .app__footer {
+      display: unset !important;
+      justify-content: unset !important;
+      flex-basis: unset !important;
+      width: unset !important;
+    }
 }
 
 @media screen 
@@ -77,6 +95,13 @@ body {
     .app__right {
       margin-top: 20px;
     }
+
+    .app__footer {
+      display: unset !important;
+      flex-basis: unset !important;
+      justify-content: unset !important;
+      width: unset !important;
+    }
 }
 
 @media only screen 
@@ -85,5 +110,24 @@ body {
   and (-webkit-min-device-pixel-ratio: 2) {
     .app__right {
       margin-top: 20px;
+    }
+
+    .app__footer {
+      display: unset !important;
+      flex-basis: unset !important;
+      justify-content: unset !important;
+      width: unset !important;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .app__footer {
+      display: unset !important;
+      flex-basis: unset !important;
+      justify-content: unset !important;
+      width: unset !important;
     }
 }
